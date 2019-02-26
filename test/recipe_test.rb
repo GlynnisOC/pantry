@@ -45,10 +45,8 @@ class RecipeTest < Minitest::Test
   def test_it_returns_total_calories
     @mac_and_cheese.add_ingredient(@cheese, 2)
     @mac_and_cheese.add_ingredient(@mac, 8)
-    @mac_and_cheese.ingredients_required
+    @mac_and_cheese.amount_required(@cheese)
+    @mac_and_cheese.amount_required(@mac)
     assert_equal 440, @mac_and_cheese.total_calories
   end
-  # The calories for each ingredient can be calculated by multiplying the
-  # `calories` attribute of the Ingredient by the amount of the ingredient
-  # required for the recipe.
 end

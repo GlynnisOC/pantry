@@ -19,14 +19,12 @@ class Recipe
   end
 
   def total_calories
-    # require 'pry'; binding.pry
     cal_for_ingredients = ingredients.sum do |ingredient|
       ingredient.calories
-      ingredients_required.each do |ingredient, amount|
-        ingredient.
-      end
-    # (cal_for_ingredients * amt_needed_for_recipe)
     end
+    ingredients_required.keys.each do |ingredient, amount|
+      (ingredient.amount) * (cal_for_ingredients)
+    end
+    total_calories
   end
-
 end
