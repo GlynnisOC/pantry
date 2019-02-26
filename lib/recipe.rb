@@ -21,10 +21,10 @@ class Recipe
   def total_calories
     cal_for_ingredients = ingredients.sum do |ingredient|
       ingredient.calories
+      require 'pry'; binding.pry
     end
-    ingredients_required.keys.each do |ingredient, amount|
+    @ingredients_required.values.each do |ingredient, amount|
       (ingredient.amount) * (cal_for_ingredients)
     end
-    total_calories
   end
 end

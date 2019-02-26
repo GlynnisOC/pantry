@@ -11,5 +11,13 @@ class Pantry
 
   def restock(ingredient, quantity)
     @stock[ingredient] += quantity
-  end 
+  end
+
+  def enough_ingredients_for?(recipe)
+    #go through the stock, check out how much of ingredient is available. Then
+    #look into recipe and see how much is needed for that and it should not
+    #be equal for the test to pass, until stock has been restocked.
+    @stock.each do |ingredient, quantity|
+
+  end
 end
